@@ -100,8 +100,10 @@ button { font: inherit; color: inherit; }
 }
 .nav.scrolled { border-bottom-color: var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 12px; }
-.logo { font-family: "Fraunces", serif; font-style: italic; font-size: 26px; font-weight: 500; text-decoration: none; line-height: 1; letter-spacing: -.01em; }
-.logo span { color: var(--clay); font-style: normal; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-family: "Fraunces", serif; font-style: italic; font-size: 26px; font-weight: 500; text-decoration: none; line-height: 1; letter-spacing: -.01em; }
+.logo .logo-text span { color: var(--clay); font-style: normal; }
+.logo-mark { width: 56px; height: 56px; margin-left: -6px; filter: drop-shadow(0 2px 6px rgba(74, 52, 36, .18)); transition: transform .6s var(--ease); }
+.logo:hover .logo-mark { transform: rotate(-10deg) scale(1.05); }
 .nav-links { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   text-decoration: none; font-size: 14.5px; font-weight: 500;
@@ -143,7 +145,8 @@ button { font: inherit; color: inherit; }
   .nav.open .nav-links { opacity: 1; transform: none; pointer-events: auto; }
   .nav-links a { display: block; padding: 12px 16px; font-size: 16px; }
 }
-@media (max-width: 400px) { .langs button { padding: 6px 8px; } .logo { font-size: 22px; } }
+@media (max-width: 480px) { .logo-text { display: none; } }
+@media (max-width: 400px) { .langs button { padding: 6px 8px; } .logo-mark { width: 48px; height: 48px; } }
 
 /* ============ Hero ============ */
 .hero { position: relative; padding: 48px 0 88px; overflow: hidden; }
