@@ -3,602 +3,298 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Peppi Hietanen</title>
-  <meta name="description" content="Peppi Hietanen – lukiolainen Oulusta. Työkokemus, koulutus, luottamustehtävät ja yhteystiedot.">
+  <title data-i18n="meta.title">Peppi Hietanen</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="Peppi Hietanen – lukiolainen Oulusta. Työkokemus, koulutus, luottamustehtävät ja yhteystiedot.">
+  <meta name="theme-color" content="#f4eee5">
   <meta property="og:title" content="Peppi Hietanen">
   <meta property="og:description" content="Lukiolainen Oulusta – rohkea, reipas ja luotettava.">
-  <meta property="og:image" content="assets/peppi.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Black,Arial' font-weight='900' font-size='34' fill='white'%3EPH%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f6f9fd;
-      --bg-soft: #e6f1ff;
-      --card: #ffffff;
-      --ink: #0d1424;
-      --ink-soft: #4a5568;
-      --line: #d9e4f2;
-      --accent: #2563eb;
-      --accent-2: #7cc4ff;
-      --accent-ink: #ffffff;
-      --sky: #cfe6ff;
-      --shadow: 0 1px 2px rgba(13, 20, 36, .04), 0 12px 32px -12px rgba(37, 99, 235, .18);
-      --radius: 22px;
-      --maxw: 1120px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0a0f1c;
-        --bg-soft: #111a2e;
-        --card: #121b2f;
-        --ink: #eef3fb;
-        --ink-soft: #a5b1c6;
-        --line: #22304a;
-        --accent: #6aa8ff;
-        --accent-2: #3b82f6;
-        --accent-ink: #0a0f1c;
-        --sky: #1a2a47;
-        --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 40px -16px rgba(0, 0, 0, .6);
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: clip; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: clip;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-    @media (max-width: 560px) { .wrap { padding: 0 16px; } }
-
-    /* ---------- Nav ---------- */
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(160%) blur(14px);
-      -webkit-backdrop-filter: saturate(160%) blur(14px);
-      background: color-mix(in srgb, var(--bg) 78%, transparent);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s;
-    }
-    .nav.scrolled { border-bottom-color: var(--line); }
-    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-    .logo {
-      font-family: "Bebas Neue", sans-serif; font-size: 28px; letter-spacing: .04em;
-      text-decoration: none; line-height: 1;
-    }
-    .logo span { color: var(--accent); }
-    .nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
-    .nav ul a {
-      text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: .02em;
-      padding: 8px 12px; border-radius: 999px; color: var(--ink-soft);
-      transition: color .2s, background .2s;
-    }
-    .nav ul a:hover, .nav ul a.active { color: var(--ink); background: var(--bg-soft); }
-    @media (max-width: 820px) { .nav ul { display: none; } }
-
-    /* ---------- Hero ---------- */
-    .hero { position: relative; padding: 56px 0 72px; }
-    .hero::before {
-      content: ""; position: absolute; inset: 0 0 auto auto; width: 62%; height: 100%;
-      background:
-        radial-gradient(60% 60% at 70% 30%, color-mix(in srgb, var(--accent-2) 35%, transparent), transparent 70%),
-        var(--bg-soft);
-      border-bottom-left-radius: 120px;
-      z-index: -1;
-    }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 48px; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--accent);
-    }
-    .eyebrow .dot {
-      width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
-      box-shadow: 0 0 0 0 rgba(34, 197, 94, .6); animation: ping 2s infinite;
-    }
-    @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
-    h1 {
-      font-family: "Bebas Neue", sans-serif; font-weight: 400;
-      font-size: clamp(76px, 13vw, 168px); line-height: .86; letter-spacing: .01em;
-      margin: 18px 0 20px;
-    }
-    h1 .line { display: block; overflow: hidden; }
-    h1 .line span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .8, .2, 1) forwards; }
-    h1 .line:nth-child(2) span { animation-delay: .12s; }
-    h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
-    @keyframes rise { to { transform: translateY(0); } }
-    .lede { font-size: 20px; color: var(--ink-soft); max-width: 30ch; margin: 0 0 28px; }
-    .lede strong { color: var(--ink); font-weight: 600; }
-    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 22px; border-radius: 999px; text-decoration: none;
-      font-weight: 600; font-size: 15px; border: 1.5px solid var(--ink);
-      transition: transform .2s, background .2s, color .2s, box-shadow .2s;
-    }
-    .btn svg { width: 18px; height: 18px; }
-    .btn.primary { background: var(--ink); color: var(--bg); }
-    .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px var(--ink); }
-    .btn.ghost:hover { background: var(--ink); color: var(--bg); transform: translateY(-2px); }
-
-    .portrait { position: relative; justify-self: center; width: min(400px, 100%); }
-    .portrait .frame {
-      position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 4 / 4.6;
-      box-shadow: var(--shadow); transform: rotate(2deg); transition: transform .5s;
-    }
-    .portrait:hover .frame { transform: rotate(0deg) scale(1.01); }
-    .portrait .frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-    .portrait::before {
-      content: ""; position: absolute; inset: 18px -18px -18px 18px; border-radius: 28px;
-      border: 2px solid var(--accent); transform: rotate(2deg); z-index: -1;
-    }
-    .chip {
-      position: absolute; display: inline-flex; align-items: center; gap: 8px;
-      background: var(--card); color: var(--ink); border: 1px solid var(--line);
-      padding: 9px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
-      box-shadow: var(--shadow); white-space: nowrap;
-      animation: float 6s ease-in-out infinite;
-    }
-    .chip.c1 { top: 8%; left: -14%; }
-    .chip.c2 { top: 46%; right: -12%; animation-delay: -2s; }
-    .chip.c3 { bottom: 6%; left: -8%; animation-delay: -4s; }
-    @keyframes float { 50% { transform: translateY(-10px); } }
-
-    @media (max-width: 900px) {
-      .hero { padding-top: 32px; }
-      .hero::before { width: 100%; height: 58%; inset: auto 0 0 0; border-radius: 80px 80px 0 0; }
-      .hero-grid { grid-template-columns: 1fr; gap: 56px; }
-      .portrait { width: min(340px, 82%); }
-      .chip.c1 { left: -10%; } .chip.c2 { right: -10%; } .chip.c3 { left: -6%; }
-    }
-
-    /* ---------- Marquee ---------- */
-    .marquee {
-      background: var(--ink); color: var(--bg); overflow: hidden; padding: 18px 0;
-      transform: rotate(-1.2deg); margin: 8px -20px 0; box-shadow: var(--shadow);
-    }
-    .marquee .track { display: flex; width: max-content; animation: scroll 32s linear infinite; }
-    .marquee span {
-      font-family: "Bebas Neue", sans-serif; font-size: 34px; letter-spacing: .06em;
-      padding: 0 22px; display: inline-flex; align-items: center; gap: 44px; line-height: 1;
-    }
-    .marquee span::after { content: "✦"; font-size: 20px; color: var(--accent-2); }
-    @keyframes scroll { to { transform: translateX(-50%); } }
-
-    /* ---------- Sections ---------- */
-    section { padding: 96px 0 0; scroll-margin-top: 64px; }
-    .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 36px; }
-    .sec-head .num { font-family: "Bebas Neue", sans-serif; font-size: 22px; color: var(--accent); letter-spacing: .08em; }
-    h2 {
-      font-family: "Bebas Neue", sans-serif; font-weight: 400;
-      font-size: clamp(48px, 7vw, 76px); line-height: .9; margin: 0; letter-spacing: .015em;
-    }
-    .sec-head .rule { flex: 1; height: 1px; background: var(--line); align-self: center; }
-
-    .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 28px; box-shadow: var(--shadow);
-    }
-
-    /* About */
-    .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
-    .about p { margin: 0 0 14px; }
-    .about .big { font-size: 24px; line-height: 1.4; font-weight: 500; }
-    .about .big em { font-style: normal; background: linear-gradient(transparent 60%, var(--sky) 60%); }
-    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .fact { background: var(--bg-soft); border-radius: 18px; padding: 18px; }
-    .fact .k { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: var(--ink-soft); font-weight: 600; }
-    .fact .v { font-size: 18px; font-weight: 600; margin-top: 4px; line-height: 1.3; }
-    .fact .emoji { font-size: 26px; line-height: 1; margin-bottom: 8px; }
-    .hobbies { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .tag {
-      font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px;
-      border: 1px solid var(--line); background: var(--card);
-    }
-    @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
-
-    /* Timeline */
-    .timeline { position: relative; display: grid; gap: 20px; padding-left: 36px; }
-    .timeline::before {
-      content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 2px;
-      background: linear-gradient(var(--accent), var(--accent-2), transparent);
-    }
-    .job { position: relative; }
-    .job::before {
-      content: ""; position: absolute; left: -33px; top: 30px; width: 16px; height: 16px; border-radius: 50%;
-      background: var(--bg); border: 3px solid var(--accent);
-    }
-    .job .card { transition: transform .3s, border-color .3s; }
-    .job .card:hover { transform: translateX(6px); border-color: var(--accent); }
-    .job-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px 16px; }
-    .job h3 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.01em; }
-    .job .where { color: var(--accent); font-weight: 600; }
-    .job .icon { font-size: 30px; line-height: 1; }
-    .job ul { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-    .job li { font-size: 15px; padding: 6px 12px; border-radius: 10px; background: var(--bg-soft); }
-
-    /* Two col */
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
-
-    .edu { display: grid; gap: 16px; }
-    .edu .item { display: flex; gap: 18px; align-items: center; }
-    .edu .badge {
-      flex: none; width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center;
-      background: var(--bg-soft); font-size: 28px;
-    }
-    .edu .lvl { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
-    .edu .name { font-size: 20px; font-weight: 600; line-height: 1.25; }
-    .edu .yr { color: var(--accent); font-weight: 600; font-size: 15px; }
-
-    .lang { display: grid; gap: 18px; }
-    .lang .row { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center; }
-    .lang .name { font-weight: 600; }
-    .lang .name small { color: var(--ink-soft); font-weight: 400; font-size: 14px; }
-    .dots { display: flex; gap: 6px; }
-    .dots i {
-      width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent);
-      background: transparent; transition: background .4s, transform .4s;
-      transform: scale(.6);
-    }
-    .lang.in .dots i { transform: scale(1); }
-    .lang.in .dots i.on { background: var(--accent); }
-    .bar { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: var(--bg-soft); overflow: hidden; }
-    .bar b { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 1.2s cubic-bezier(.2, .8, .2, 1); }
-
-    /* Trust roles */
-    .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .role { position: relative; overflow: hidden; transition: transform .3s; }
-    .role:hover { transform: translateY(-4px); }
-    .role .icon { font-size: 34px; line-height: 1; margin-bottom: 14px; }
-    .role h3 { font-size: 19px; margin: 0 0 10px; line-height: 1.25; }
-    .role .meta { display: grid; gap: 4px; font-size: 15px; color: var(--ink-soft); }
-    .role .meta b { color: var(--ink); font-weight: 600; }
-    .role::after {
-      content: ""; position: absolute; right: -40px; bottom: -40px; width: 120px; height: 120px; border-radius: 50%;
-      background: var(--sky); opacity: .7; z-index: 0;
-    }
-    .role > * { position: relative; z-index: 1; }
-
-    /* Quotes */
-    .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-    .quote {
-      background: var(--ink); color: var(--bg); border-radius: var(--radius); padding: 24px;
-      font-size: 19px; font-weight: 500; line-height: 1.35; position: relative; min-height: 140px;
-      display: flex; align-items: flex-end;
-      transition: transform .3s;
-    }
-    .quote:nth-child(even) { background: var(--accent); color: var(--accent-ink); }
-    .quote::before {
-      content: "“"; position: absolute; top: 6px; left: 18px; font-family: "Bebas Neue", sans-serif;
-      font-size: 80px; line-height: 1; opacity: .35;
-    }
-    .quote:hover { transform: rotate(-1.5deg) scale(1.02); }
-
-    /* Contact */
-    .contact {
-      margin-top: 96px; background: var(--ink); color: var(--bg); border-radius: 36px 36px 0 0;
-      padding: 80px 0 40px; position: relative; overflow: hidden;
-    }
-    .contact::before {
-      content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px; border-radius: 50%;
-      background: radial-gradient(circle, color-mix(in srgb, var(--accent-2) 55%, transparent), transparent 70%);
-      opacity: .5;
-    }
-    .contact h2 { font-size: clamp(56px, 10vw, 120px); position: relative; }
-    .contact h2 span { color: var(--accent-2); }
-    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: end; margin-top: 36px; position: relative; }
-    .links { display: grid; gap: 12px; }
-    .links a {
-      display: flex; align-items: center; gap: 16px; text-decoration: none;
-      padding: 18px 22px; border-radius: 18px; border: 1px solid color-mix(in srgb, var(--bg) 18%, transparent);
-      font-size: 18px; font-weight: 500; transition: background .2s, transform .2s;
-    }
-    .links a:hover { background: color-mix(in srgb, var(--bg) 10%, transparent); transform: translateX(6px); }
-    .links a .ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--bg) 12%, transparent); flex: none; }
-    .links a .ic svg { width: 20px; height: 20px; }
-    .links a .lbl { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .14em; opacity: .6; font-weight: 600; }
-    .links a .val { word-break: break-word; }
-    .sign { text-align: center; }
-    .sign p { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; opacity: .7; margin: 0; }
-    .sign .sig { font-family: "Allura", cursive; font-size: 110px; line-height: 1.1; color: var(--bg); }
-    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--bg) 14%, transparent); font-size: 14px; opacity: .6; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; position: relative; }
-    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } .sign .sig { font-size: 84px; } }
-
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1); }
-    .reveal.in { opacity: 1; transform: none; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      h1 .line span { transform: none; }
-      .reveal { opacity: 1; transform: none; }
-      html { scroll-behavior: auto; }
-    }
-  </style>
+  <meta property="og:image" content="assets/peppi-portrait.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%239a5433'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23f4eee5'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 <body>
+  <a class="skip" href="#main" data-i18n="skip">Siirry sisältöön</a>
+  <div class="progress" aria-hidden="true"></div>
 
-  <nav class="nav" id="nav">
+  <nav class="nav" aria-label="Peppi Hietanen">
     <div class="wrap">
       <a href="#top" class="logo">Peppi<span>.</span></a>
-      <ul>
-        <li><a href="#minusta">Minusta</a></li>
-        <li><a href="#tyokokemus">Työkokemus</a></li>
-        <li><a href="#koulutus">Koulutus</a></li>
-        <li><a href="#luottamustehtavat">Luottamustehtävät</a></li>
-        <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#minusta" data-i18n="nav.about">Minusta</a></li>
+        <li><a href="#tyokokemus" data-i18n="nav.work">Työkokemus</a></li>
+        <li><a href="#koulutus" data-i18n="nav.edu">Koulutus</a></li>
+        <li><a href="#luottamustehtavat" data-i18n="nav.trust">Luottamustehtävät</a></li>
+        <li><a href="#yhteystiedot" data-i18n="nav.contact">Yhteystiedot</a></li>
       </ul>
+      <div class="controls">
+        <div class="langs" role="group" data-i18n-attr="aria-label:nav.lang" aria-label="Kieli">
+          <span class="pill" aria-hidden="true"></span>
+          <button type="button" data-lang="fi" aria-pressed="true" lang="fi" title="Suomi">FI</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
+          <button type="button" data-lang="sv" aria-pressed="false" lang="sv" title="Svenska">SV</button>
+        </div>
+        <button type="button" class="icon-btn theme-btn" data-i18n-attr="aria-label:nav.theme,title:nav.theme" aria-label="Vaihda vaalea/tumma teema">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav-links" data-i18n-attr="aria-label:nav.menu" aria-label="Valikko">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
   <header class="hero" id="top">
+    <span class="glow" aria-hidden="true"></span>
+    <svg class="blob" viewBox="0 0 600 600" aria-hidden="true"><path fill="currentColor" d="M421 72c62 38 120 103 128 177 9 74-33 157-92 214s-135 89-213 79S93 478 63 409 24 251 59 183 157 66 233 44s126-10 188 28z"/></svg>
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow"><span class="dot"></span>Opiskelija (lukio) · Oulu</span>
+        <span class="eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">Opiskelija (lukio) · Oulu</span></span>
+        <p class="hello" data-i18n="hero.hello">Hei, olen</p>
         <h1>
           <span class="line"><span>Peppi</span></span>
-          <span class="line"><span class="outline">Hietanen</span></span>
+          <span class="line"><span>Hietanen</span></span>
         </h1>
-        <p class="lede">Rohkea, reipas ja luotettava lukiolainen, joka <strong>tulee toimeen kaikenlaisten ihmisten kanssa</strong>.</p>
+        <p class="rotator" aria-hidden="true"><span class="dash">—</span><span class="word">lukiolainen</span><span class="caret"></span></p>
+        <p class="lede" data-i18n="hero.lede">Rohkea, reipas ja luotettava – tulen helposti toimeen kaikenlaisten ihmisten kanssa.</p>
         <div class="cta">
           <a class="btn primary" href="#yhteystiedot">
-            Ota yhteyttä
+            <span data-i18n="hero.cta1">Ota yhteyttä</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn ghost" href="#tyokokemus">Katso kokemus</a>
+          <a class="btn ghost" href="#tyokokemus" data-i18n="hero.cta2">Katso kokemus</a>
         </div>
       </div>
 
-      <div class="portrait">
-        <div class="frame"><img src="assets/peppi.jpg" alt="Peppi Hietanen" width="876" height="1020"></div>
-        <span class="chip c1">⚽ Jalkapallotuomari</span>
-        <span class="chip c2">🎻 Viulisti</span>
-        <span class="chip c3">🌍 Asunut ulkomailla</span>
+      <div class="stack-wrap">
+        <button type="button" class="stack" data-i18n-attr="aria-label:hero.stack" aria-label="Seuraava kuva">
+          <span class="photo" data-pos="0"><img src="assets/peppi-portrait.jpg" data-i18n-attr="alt:alt.portrait" alt="Peppi ruskeassa kuviollisessa paidassa" width="900" height="1200"></span>
+          <span class="photo" data-pos="1"><img src="assets/peppi-coast.jpg" data-i18n-attr="alt:alt.coast" alt="Peppi merenrannalla vuorten edessä" width="900" height="1200"></span>
+          <span class="photo" data-pos="2"><img src="assets/peppi-evening.jpg" data-i18n-attr="alt:alt.evening" alt="Peppi hymyilee illallisella" width="900" height="1200" loading="lazy"></span>
+        </button>
+        <span class="chip c1" data-i18n="chip.ref">⚽ Jalkapallotuomari</span>
+        <span class="chip c2" data-i18n="chip.violin">🎻 Viulisti</span>
+        <span class="chip c3" data-i18n="chip.abroad">🌍 Asunut ulkomailla</span>
+        <div class="stack-meta">
+          <span class="stack-hint" data-i18n="hero.hint">Klikkaa tai pyyhkäise kuvaa ✦</span>
+          <div class="dots-nav">
+            <button type="button" aria-current="true" data-i18n-attr="aria-label:alt.portrait" aria-label="Peppi ruskeassa kuviollisessa paidassa"></button>
+            <button type="button" aria-current="false" data-i18n-attr="aria-label:alt.coast" aria-label="Peppi merenrannalla vuorten edessä"></button>
+            <button type="button" aria-current="false" data-i18n-attr="aria-label:alt.evening" aria-label="Peppi hymyilee illallisella"></button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>Rohkea</span><span>Reipas</span><span>Ystävällinen</span><span>Avulias</span><span>Sosiaalinen</span><span>Luotettava</span><span>Helposti lähestyttävä</span><span>Joustava</span>
-      <span>Rohkea</span><span>Reipas</span><span>Ystävällinen</span><span>Avulias</span><span>Sosiaalinen</span><span>Luotettava</span><span>Helposti lähestyttävä</span><span>Joustava</span>
-    </div>
-  </div>
+  <div class="marquee" aria-hidden="true"><div class="track"></div></div>
 
-  <main>
-    <!-- Minusta -->
+  <main id="main">
+    <!-- About -->
     <section id="minusta">
       <div class="wrap">
-        <div class="sec-head reveal"><span class="num">01</span><h2>Minusta</h2><span class="rule"></span></div>
-        <div class="about">
+        <div class="sec-head reveal"><span class="num">01</span><h2 data-i18n-html="about.title">Minusta</h2><span class="rule"></span></div>
+        <div class="about" style="margin-top: 32px">
           <div class="card reveal">
-            <p class="big">Olen lukiolainen Oulusta, ja <em>pidän matkustelusta</em> – isompana haluan opiskella ja asua ulkomailla.</p>
-            <p>Olen käynyt musiikkiluokan ja soittanut viulua koulun orkesterissa. Perheeseeni kuuluu vanhempien lisäksi pikkusisko ja koira.</p>
-            <p>Olemme asuneet ulkomailla useassa eri maassa, ja sen vuoksi olen hyvin joustava ja sopeutuvainen ja uskallan puhua englantia. Vuonna 2019–2020 asuimme perheen kanssa Espanjassa (Las Palmasissa), ja kävin siskoni kanssa paikallista espanjankielistä koulua, kunnes jouduimme koronan takia palaamaan Suomeen.</p>
+            <p class="big" data-i18n-html="about.big">Olen lukiolainen Oulusta, ja <em>pidän matkustelusta</em> – isompana haluan opiskella ja asua ulkomailla.</p>
+            <p data-i18n="about.p1">Olen käynyt musiikkiluokan ja soittanut viulua koulun orkesterissa. Perheeseeni kuuluu vanhempien lisäksi pikkusisko ja koira.</p>
+            <p data-i18n="about.p2">Olemme asuneet ulkomailla useassa eri maassa, ja sen vuoksi olen hyvin joustava ja sopeutuvainen ja uskallan puhua englantia. Vuonna 2019–2020 asuimme perheen kanssa Espanjassa (Las Palmasissa), ja kävin siskoni kanssa paikallista espanjankielistä koulua, kunnes jouduimme koronan takia palaamaan Suomeen.</p>
+            <div class="hobby-title" data-i18n="about.free">Vapaa-ajalla</div>
             <div class="hobbies">
-              <span class="tag">⛳ Golf</span>
-              <span class="tag">⚽ Jalkapallo</span>
-              <span class="tag">🏋️ Kuntosali</span>
-              <span class="tag">🎻 Viulu</span>
-              <span class="tag">✈️ Matkustelu</span>
+              <button type="button" class="tag" aria-pressed="false" data-emoji="⛳">⛳ <span data-i18n="hobby.golf">Golf</span></button>
+              <button type="button" class="tag" aria-pressed="false" data-emoji="⚽">⚽ <span data-i18n="hobby.football">Jalkapallo</span></button>
+              <button type="button" class="tag" aria-pressed="false" data-emoji="💪">🏋️ <span data-i18n="hobby.gym">Kuntosali</span></button>
+              <button type="button" class="tag" aria-pressed="false" data-emoji="🎵">🎻 <span data-i18n="hobby.violin">Viulu</span></button>
+              <button type="button" class="tag" aria-pressed="false" data-emoji="✈️">✈️ <span data-i18n="hobby.travel">Matkustelu</span></button>
             </div>
           </div>
           <div class="facts">
-            <div class="fact reveal"><div class="emoji">📍</div><div class="k">Kotipaikka</div><div class="v">Oulu</div></div>
-            <div class="fact reveal"><div class="emoji">🎓</div><div class="k">Opiskelen</div><div class="v">Raksilan lukio</div></div>
-            <div class="fact reveal"><div class="emoji">🇪🇸</div><div class="k">Asunut</div><div class="v">Las Palmas 2019–20</div></div>
-            <div class="fact reveal"><div class="emoji">🗣️</div><div class="k">Kielet</div><div class="v">4 kieltä</div></div>
+            <div class="fact reveal"><div class="emoji" aria-hidden="true">📍</div><div class="k" data-i18n="fact.home.k">Kotipaikka</div><div class="v" data-i18n="fact.home.v">Oulu</div></div>
+            <div class="fact reveal"><div class="emoji" aria-hidden="true">🎓</div><div class="k" data-i18n="fact.study.k">Opiskelen</div><div class="v" data-i18n="fact.study.v">Raksilan lukio</div></div>
+            <div class="fact reveal"><div class="emoji" aria-hidden="true">🌴</div><div class="k" data-i18n="fact.lived.k">Asunut</div><div class="v" data-i18n="fact.lived.v">Las Palmas 2019–20</div></div>
+            <div class="fact reveal"><div class="emoji" aria-hidden="true">💬</div><div class="k" data-i18n="fact.langs.k">Kielet</div><div class="v" data-i18n="fact.langs.v">4 kieltä</div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Työkokemus -->
+    <!-- Work -->
     <section id="tyokokemus">
       <div class="wrap">
-        <div class="sec-head reveal"><span class="num">02</span><h2>Työkokemus</h2><span class="rule"></span></div>
-        <div class="timeline">
-          <article class="job reveal">
-            <div class="card">
-              <div class="job-top">
-                <div><h3>Myyjä / apulainen</h3><div class="where">Muoti Privaatti</div></div>
-                <span class="icon" aria-hidden="true">👗</span>
-              </div>
-              <ul><li>Myynti</li><li>Vaatteiden asettelu</li><li>Varaston järjestäminen</li><li>Myymälän siisteydestä huolehtiminen</li></ul>
-            </div>
+        <div class="sec-head reveal"><span class="num">02</span><h2 data-i18n-html="work.title">Työkokemus</h2><span class="rule"></span></div>
+        <p class="sec-sub reveal" data-i18n="work.sub">Avaa tehtävä nähdäksesi, mitä tein</p>
+        <div class="jobs">
+          <article class="card job reveal" data-open="true">
+            <button type="button" class="job-head" aria-expanded="true" aria-controls="job1">
+              <span class="n">i.</span>
+              <span><span class="jt" data-i18n="job1.title">Myyjä / apulainen</span><span class="where" data-i18n="job1.where">Muoti Privaatti</span></span>
+              <span class="emo" aria-hidden="true">👗</span>
+              <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="job-body" id="job1"><div><ul data-i18n-list="job1.tasks"><li>Myynti</li><li>Vaatteiden asettelu</li><li>Varaston järjestäminen</li><li>Myymälän siisteydestä huolehtiminen</li></ul></div></div>
           </article>
-          <article class="job reveal">
-            <div class="card">
-              <div class="job-top">
-                <div><h3>Myyjä / pakkaaja</h3><div class="where">ChocoSomnia</div></div>
-                <span class="icon" aria-hidden="true">🍫</span>
-              </div>
-              <ul><li>Konvehtien pakkaus</li><li>Konvehtirasioiden taitteleminen</li><li>Tuotteiden myynti joulutorilla</li></ul>
-            </div>
+          <article class="card job reveal" data-open="false">
+            <button type="button" class="job-head" aria-expanded="false" aria-controls="job2">
+              <span class="n">ii.</span>
+              <span><span class="jt" data-i18n="job2.title">Myyjä / pakkaaja</span><span class="where" data-i18n="job2.where">ChocoSomnia</span></span>
+              <span class="emo" aria-hidden="true">🍫</span>
+              <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="job-body" id="job2"><div><ul data-i18n-list="job2.tasks"><li>Konvehtien pakkaus</li><li>Konvehtirasioiden taitteleminen</li><li>Tuotteiden myynti joulutorilla</li></ul></div></div>
           </article>
-          <article class="job reveal">
-            <div class="card">
-              <div class="job-top">
-                <div><h3>Jalkapallotuomari</h3><div class="where">Juniorijalkapallo</div></div>
-                <span class="icon" aria-hidden="true">🟨</span>
-              </div>
-              <ul><li>Tuomarointi juniorijalkapallon peleissä</li><li>Turnaukset</li></ul>
-            </div>
+          <article class="card job reveal" data-open="false">
+            <button type="button" class="job-head" aria-expanded="false" aria-controls="job3">
+              <span class="n">iii.</span>
+              <span><span class="jt" data-i18n="job3.title">Jalkapallotuomari</span><span class="where" data-i18n="job3.where">Juniorijalkapallo</span></span>
+              <span class="emo" aria-hidden="true">🟨</span>
+              <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="job-body" id="job3"><div><ul data-i18n-list="job3.tasks"><li>Tuomarointi juniorijalkapallon peleissä</li><li>Tuomarointi turnauksissa</li></ul></div></div>
           </article>
-          <article class="job reveal">
-            <div class="card">
-              <div class="job-top">
-                <div><h3>Valmentaja / vetäjä</h3><div class="where">Prinsessafutis</div></div>
-                <span class="icon" aria-hidden="true">👑</span>
-              </div>
-              <ul><li>Prinsessafutiksen ohjaaja</li></ul>
-            </div>
+          <article class="card job reveal" data-open="false">
+            <button type="button" class="job-head" aria-expanded="false" aria-controls="job4">
+              <span class="n">iv.</span>
+              <span><span class="jt" data-i18n="job4.title">Valmentaja / vetäjä</span><span class="where" data-i18n="job4.where">Prinsessafutis</span></span>
+              <span class="emo" aria-hidden="true">👑</span>
+              <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="job-body" id="job4"><div><ul data-i18n-list="job4.tasks"><li>Prinsessafutiksen ohjaaja</li></ul></div></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Koulutus + Kielitaito -->
+    <!-- Education + languages -->
     <section id="koulutus">
       <div class="wrap">
-        <div class="sec-head reveal"><span class="num">03</span><h2>Koulutus &amp; kielet</h2><span class="rule"></span></div>
+        <div class="sec-head reveal"><span class="num">03</span><h2 data-i18n-html="edu.title">Koulutus <em>&amp;</em> kielet</h2><span class="rule"></span></div>
+        <p class="sec-sub reveal" data-i18n="edu.sub">Vie hiiri kielen päälle – tai napauta</p>
         <div class="split">
           <div class="card edu reveal">
             <div class="item">
               <div class="badge" aria-hidden="true">📚</div>
-              <div><div class="lvl">Lukio</div><div class="name">Raksilan lukio</div><div class="yr">2021–</div></div>
+              <div><div class="lvl" data-i18n="edu.upper">Lukio</div><div class="name" data-i18n="edu.upper.name">Raksilan lukio</div><div class="yr">2021–</div></div>
             </div>
             <div class="item">
               <div class="badge" aria-hidden="true">🎼</div>
-              <div><div class="lvl">Peruskoulu</div><div class="name">Rajakylän koulu, musiikkiluokka</div><div class="yr">– 2021</div></div>
+              <div><div class="lvl" data-i18n="edu.basic">Peruskoulu</div><div class="name" data-i18n="edu.basic.name">Rajakylän koulu, musiikkiluokka</div><div class="yr">– 2021</div></div>
             </div>
           </div>
           <div class="card lang reveal" id="lang">
-            <div class="row" data-level="5"><span class="name">Suomi <small>äidinkieli</small></span><span class="dots"></span><span class="bar"><b></b></span></div>
-            <div class="row" data-level="4"><span class="name">Englanti</span><span class="dots"></span><span class="bar"><b></b></span></div>
-            <div class="row" data-level="4"><span class="name">Ruotsi</span><span class="dots"></span><span class="bar"><b></b></span></div>
-            <div class="row" data-level="3"><span class="name">Espanja</span><span class="dots"></span><span class="bar"><b></b></span></div>
+            <div class="row" data-level="5" tabindex="0"><span class="name"><span data-i18n="lang.fi">Suomi</span><small data-i18n="lang.native">äidinkieli</small></span><span class="lvl-dots" role="img"></span><span class="bar"><b></b></span><span class="bubble" lang="fi" aria-hidden="true">Moi!</span></div>
+            <div class="row" data-level="4" tabindex="0"><span class="name" data-i18n="lang.en">Englanti</span><span class="lvl-dots" role="img"></span><span class="bar"><b></b></span><span class="bubble" lang="en" aria-hidden="true">Hello!</span></div>
+            <div class="row" data-level="4" tabindex="0"><span class="name" data-i18n="lang.sv">Ruotsi</span><span class="lvl-dots" role="img"></span><span class="bar"><b></b></span><span class="bubble" lang="sv" aria-hidden="true">Hej!</span></div>
+            <div class="row" data-level="3" tabindex="0"><span class="name" data-i18n="lang.es">Espanja</span><span class="lvl-dots" role="img"></span><span class="bar"><b></b></span><span class="bubble" lang="es" aria-hidden="true">¡Hola!</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Luottamustehtävät -->
+    <!-- Positions of trust -->
     <section id="luottamustehtavat">
       <div class="wrap">
-        <div class="sec-head reveal"><span class="num">04</span><h2>Luottamustehtävät</h2><span class="rule"></span></div>
-        <div class="roles">
+        <div class="sec-head reveal"><span class="num">04</span><h2 data-i18n-html="trust.title">Luottamustehtävät</h2><span class="rule"></span></div>
+        <div class="roles" style="margin-top: 32px">
           <div class="card role reveal">
-            <div class="icon" aria-hidden="true">©️</div>
-            <h3>Jalkapallojoukkueen kapteeni</h3>
-            <div class="meta"><span><b>ONS 0506</b> · kapteeni 2020–2021</span><span><b>ONS 0506</b> · varakapteeni 2022–</span></div>
+            <div class="icon" aria-hidden="true">⚽</div>
+            <h3 data-i18n="role1.title">Jalkapallojoukkueen kapteeni</h3>
+            <div class="meta"><span><b>ONS 0506</b> · <span data-i18n="role1.a">kapteeni 2020–2021</span></span><span><b>ONS 0506</b> · <span data-i18n="role1.b">varakapteeni 2022–</span></span></div>
           </div>
           <div class="card role reveal">
             <div class="icon" aria-hidden="true">🏛️</div>
-            <h3>Oppilaskunnan hallituksen jäsen</h3>
-            <div class="meta"><span><b>Rajakylän koulu</b></span><span>2018–2019 &amp; 2020–2021</span></div>
+            <h3 data-i18n="role2.title">Oppilaskunnan hallituksen jäsen</h3>
+            <div class="meta"><b data-i18n="school.rajakyla">Rajakylän koulu</b><span>2018–2019 &amp; 2020–2021</span></div>
           </div>
           <div class="card role reveal">
             <div class="icon" aria-hidden="true">🤝</div>
-            <h3>Luokan luottamusoppilas</h3>
-            <div class="meta"><span><b>Rajakylän koulu</b></span><span>2018–2019 &amp; 2020–2021</span></div>
+            <h3 data-i18n="role3.title">Luokan luottamusoppilas</h3>
+            <div class="meta"><b data-i18n="school.rajakyla">Rajakylän koulu</b><span>2018–2019 &amp; 2020–2021</span></div>
           </div>
           <div class="card role reveal">
-            <div class="icon" aria-hidden="true">⚽</div>
-            <h3>Juniorijaoksen jäsen</h3>
-            <div class="meta"><span><b>OGK</b></span><span>2022–</span></div>
+            <div class="icon" aria-hidden="true">🌱</div>
+            <h3 data-i18n="role4.title">Juniorijaoksen jäsen</h3>
+            <div class="meta"><b>OGK</b><span>2022–</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Minusta sanottua -->
+    <!-- What people say -->
     <section id="sanottua">
       <div class="wrap">
-        <div class="sec-head reveal"><span class="num">05</span><h2>Minusta sanottua</h2><span class="rule"></span></div>
-        <div class="quotes">
-          <div class="quote reveal">Olen rohkea ja reipas.</div>
-          <div class="quote reveal">Noudatan hyvin ohjeita.</div>
-          <div class="quote reveal">Olen ystävällinen ja avulias.</div>
-          <div class="quote reveal">Tulen helposti toimeen monenlaisten ihmisten kanssa.</div>
-          <div class="quote reveal">Olen luotettava ja helposti lähestyttävä.</div>
+        <div class="sec-head reveal"><span class="num">05</span><h2 data-i18n-html="said.title">Minusta sanottua</h2><span class="rule"></span></div>
+        <p class="sec-sub reveal" data-i18n="said.sub">Käännä kortit</p>
+        <div class="flips">
+          <button type="button" class="flip reveal" aria-pressed="false"><span class="inner">
+            <span class="face front"><span class="word" data-i18n="said.1.w">Rohkea</span><span class="turn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg></span></span>
+            <span class="face back" data-i18n="said.1.s">Olen rohkea ja reipas.</span>
+          </span></button>
+          <button type="button" class="flip reveal" aria-pressed="false"><span class="inner">
+            <span class="face front"><span class="word" data-i18n="said.2.w">Tunnollinen</span><span class="turn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg></span></span>
+            <span class="face back" data-i18n="said.2.s">Noudatan hyvin ohjeita.</span>
+          </span></button>
+          <button type="button" class="flip reveal" aria-pressed="false"><span class="inner">
+            <span class="face front"><span class="word" data-i18n="said.3.w">Ystävällinen</span><span class="turn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg></span></span>
+            <span class="face back" data-i18n="said.3.s">Olen ystävällinen ja avulias.</span>
+          </span></button>
+          <button type="button" class="flip reveal" aria-pressed="false"><span class="inner">
+            <span class="face front"><span class="word" data-i18n="said.4.w">Sosiaalinen</span><span class="turn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg></span></span>
+            <span class="face back" data-i18n="said.4.s">Tulen helposti toimeen monenlaisten ihmisten kanssa.</span>
+          </span></button>
+          <button type="button" class="flip reveal" aria-pressed="false"><span class="inner">
+            <span class="face front"><span class="word" data-i18n="said.5.w">Luotettava</span><span class="turn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg></span></span>
+            <span class="face back" data-i18n="said.5.s">Olen luotettava ja helposti lähestyttävä.</span>
+          </span></button>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Yhteystiedot -->
+  <!-- Contact -->
   <section class="contact" id="yhteystiedot">
     <div class="wrap">
-      <h2 class="reveal">Toivottavasti<br><span>kiinnostuitte!</span></h2>
+      <h2 class="reveal"><span data-i18n="contact.t1">Toivottavasti</span> <em data-i18n="contact.t2">kiinnostuitte!</em></h2>
       <div class="contact-grid">
         <div class="links reveal">
-          <a href="mailto:peppi.hietanen@icloud.com">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-            <span><span class="lbl">Sähköposti</span><span class="val">peppi.hietanen@icloud.com</span></span>
-          </a>
-          <a href="tel:+358451789947">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
-            <span><span class="lbl">Puhelin</span><span class="val">+358 45 178 9947</span></span>
-          </a>
-          <a href="https://www.instagram.com/peppi.hietanen/" target="_blank" rel="noopener">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></span>
-            <span><span class="lbl">Instagram</span><span class="val">@peppi.hietanen</span></span>
-          </a>
+          <div class="link-row">
+            <a href="mailto:peppi.hietanen@icloud.com">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <span><span class="lbl" data-i18n="contact.email">Sähköposti</span><span class="val">peppi.hietanen@icloud.com</span></span>
+            </a>
+            <button type="button" class="copy" data-copy="peppi.hietanen@icloud.com" data-i18n-attr="aria-label:contact.copy,title:contact.copy" aria-label="Kopioi sähköpostiosoite">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+          </div>
+          <div class="link-row">
+            <a href="tel:+358451789947">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <span><span class="lbl" data-i18n="contact.phone">Puhelin</span><span class="val">+358 45 178 9947</span></span>
+            </a>
+          </div>
+          <div class="link-row">
+            <a href="https://www.instagram.com/peppi.hietanen/" target="_blank" rel="noopener">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></span>
+              <span><span class="lbl">Instagram</span><span class="val">@peppi.hietanen</span></span>
+            </a>
+          </div>
         </div>
         <div class="sign reveal">
-          <p>Ystävällisin terveisin</p>
-          <div class="sig">Peppi</div>
+          <p data-i18n="contact.regards">Ystävällisin terveisin</p>
+          <div class="sig" aria-hidden="true">Peppi</div>
         </div>
       </div>
-      <footer>
-        <span>© <span id="year"></span> Peppi Hietanen</span>
-        <span>Oulu, Suomi</span>
+      <footer class="foot">
+        <span>© <span id="year">2026</span> Peppi Hietanen · <span data-i18n="foot.place">Oulu, Suomi</span></span>
+        <span><a href="privacy.html" data-keep-lang data-i18n="foot.privacy">Tietosuojaseloste</a> · <span data-i18n="foot.nocookies">Ei evästeitä, ei seurantaa</span></span>
       </footer>
     </div>
   </section>
 
-  <script>
-    // Nav border on scroll
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+  <div class="toast" role="status" aria-live="polite"></div>
 
-    // Language dots
-    document.querySelectorAll('#lang .row').forEach(row => {
-      const lvl = +row.dataset.level;
-      const dots = row.querySelector('.dots');
-      for (let i = 0; i < 5; i++) {
-        const d = document.createElement('i');
-        if (i < lvl) d.className = 'on';
-        d.style.transitionDelay = (i * 90) + 'ms';
-        dots.appendChild(d);
-      }
-      dots.setAttribute('role', 'img');
-      dots.setAttribute('aria-label', lvl + ' / 5');
-    });
-
-    // Reveal on scroll
-    const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        el.classList.add('in');
-        if (el.id === 'lang') {
-          el.querySelectorAll('.row').forEach(r => r.querySelector('.bar b').style.width = (r.dataset.level * 20) + '%');
-        }
-        io.unobserve(el);
-      });
-    }, { threshold: 0.15 }) : null;
-
-    document.querySelectorAll('.reveal').forEach((el, i) => {
-      el.style.transitionDelay = (i % 4) * 70 + 'ms';
-      if (io) io.observe(el); else el.classList.add('in');
-    });
-    if (!io) document.querySelectorAll('#lang .row').forEach(r => r.querySelector('.bar b').style.width = (r.dataset.level * 20) + '%');
-
-    // Active nav link
-    const links = [...document.querySelectorAll('.nav ul a')];
-    const secObs = 'IntersectionObserver' in window && new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    if (secObs) document.querySelectorAll('section[id]').forEach(s => secObs.observe(s));
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="assets/i18n.js"></script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
