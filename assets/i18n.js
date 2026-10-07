@@ -2,7 +2,7 @@
 window.I18N = {
   fi: {
     "meta.title": "Peppi Hietanen",
-    "meta.desc": "Peppi Hietanen – lukiolainen Oulusta. Työkokemus, koulutus, luottamustehtävät ja yhteystiedot.",
+    "meta.desc": "Peppi Hietanen – Haaga-Helian opiskelija Helsingistä. Työkokemus, koulutus, luottamustehtävät ja yhteystiedot.",
     "skip": "Siirry sisältöön",
     "nav.about": "Minusta",
     "nav.work": "Työkokemus",
@@ -13,9 +13,9 @@ window.I18N = {
     "nav.theme": "Vaihda vaalea/tumma teema",
     "nav.menu": "Valikko",
 
-    "hero.eyebrow": "Opiskelija (lukio) · Oulu",
+    "hero.eyebrow": "Opiskelija · Haaga-Helia · Helsinki",
     "hero.hello": "Hei, olen",
-    "hero.roles": ["lukiolainen", "jalkapallotuomari", "joukkueen kapteeni", "viulisti", "maailmanmatkaaja"],
+    "hero.roles": ["opiskelija", "jalkapallotuomari", "joukkueen kapteeni", "viulisti", "maailmanmatkaaja"],
     "hero.lede": "Rohkea, reipas ja luotettava – tulen helposti toimeen kaikenlaisten ihmisten kanssa.",
     "hero.cta1": "Ota yhteyttä",
     "hero.cta2": "Katso kokemus",
@@ -32,7 +32,7 @@ window.I18N = {
     "traits": ["Rohkea", "Reipas", "Ystävällinen", "Avulias", "Sosiaalinen", "Luotettava", "Helposti lähestyttävä", "Joustava"],
 
     "about.title": "Minusta",
-    "about.big": "Olen lukiolainen Oulusta, ja <em>pidän matkustelusta</em> – isompana haluan opiskella ja asua ulkomailla.",
+    "about.big": "Asun Helsingissä ja opiskelen Haaga-Heliassa. <em>Pidän matkustelusta</em> – tulevaisuudessa haluan opiskella ja asua ulkomailla.",
     "about.p1": "Olen käynyt musiikkiluokan ja soittanut viulua koulun orkesterissa. Perheeseeni kuuluu vanhempien lisäksi pikkusisko ja koira.",
     "about.p2": "Olemme asuneet ulkomailla useassa eri maassa, ja sen vuoksi olen hyvin joustava ja sopeutuvainen ja uskallan puhua englantia. Vuonna 2019–2020 asuimme perheen kanssa Espanjassa (Las Palmasissa), ja kävin siskoni kanssa paikallista espanjankielistä koulua, kunnes jouduimme koronan takia palaamaan Suomeen.",
     "about.free": "Vapaa-ajalla",
@@ -42,9 +42,9 @@ window.I18N = {
     "hobby.violin": "Viulu",
     "hobby.travel": "Matkustelu",
     "fact.home.k": "Kotipaikka",
-    "fact.home.v": "Oulu",
+    "fact.home.v": "Helsinki",
     "fact.study.k": "Opiskelen",
-    "fact.study.v": "Raksilan lukio",
+    "fact.study.v": "Haaga-Helia",
     "fact.lived.k": "Asunut",
     "fact.lived.v": "Las Palmas 2019–20",
     "fact.langs.k": "Kielet",
@@ -67,8 +67,12 @@ window.I18N = {
 
     "edu.title": "Koulutus <em>&amp;</em> kielet",
     "edu.sub": "Vie hiiri kielen päälle – tai napauta",
+    "edu.uni": "Ammattikorkeakoulu",
+    "edu.uni.name": "Haaga-Helia ammattikorkeakoulu",
+    "edu.uni.yr": "Nykyään",
     "edu.upper": "Lukio",
     "edu.upper.name": "Raksilan lukio",
+    "edu.upper.yr": "Oulu",
     "edu.basic": "Peruskoulu",
     "edu.basic.name": "Rajakylän koulu, musiikkiluokka",
     "lang.fi": "Suomi",
@@ -108,7 +112,7 @@ window.I18N = {
     "contact.copied": "Sähköpostiosoite kopioitu ✓",
     "contact.regards": "Ystävällisin terveisin",
 
-    "foot.place": "Oulu, Suomi",
+    "foot.place": "Helsinki, Suomi",
     "foot.privacy": "Tietosuojaseloste",
     "foot.nocookies": "Ei evästeitä, ei seurantaa",
 
@@ -125,7 +129,7 @@ window.I18N = {
         </ul>
       </div>
       <h2>Rekisterinpitäjä</h2>
-      <p>Peppi Hietanen, Oulu<br>Sähköposti: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
+      <p>Peppi Hietanen, Helsinki<br>Sähköposti: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
       <h2>Mikä tämä sivusto on?</h2>
       <p>Tämä on henkilökohtainen CV-sivustoni. Sivuston tarkoitus on esitellä osaamistani ja kokemustani mahdollisille työnantajille.</p>
       <h2>Minusta julkaistut tiedot</h2>
@@ -148,7 +152,7 @@ window.I18N = {
 
   en: {
     "meta.title": "Peppi Hietanen",
-    "meta.desc": "Peppi Hietanen – upper secondary student from Oulu, Finland. Work experience, education, positions of trust and contact details.",
+    "meta.desc": "Peppi Hietanen – student at Haaga-Helia in Helsinki, Finland. Work experience, education, positions of trust and contact details.",
     "skip": "Skip to content",
     "nav.about": "About",
     "nav.work": "Experience",
@@ -159,7 +163,7 @@ window.I18N = {
     "nav.theme": "Toggle light/dark theme",
     "nav.menu": "Menu",
 
-    "hero.eyebrow": "Upper secondary student · Oulu, Finland",
+    "hero.eyebrow": "Student · Haaga-Helia · Helsinki",
     "hero.hello": "Hi, I'm",
     "hero.roles": ["student", "football referee", "team captain", "violinist", "globetrotter"],
     "hero.lede": "Brave, energetic and reliable – I get along easily with all kinds of people.",
@@ -178,7 +182,7 @@ window.I18N = {
     "traits": ["Brave", "Energetic", "Friendly", "Helpful", "Sociable", "Reliable", "Approachable", "Adaptable"],
 
     "about.title": "About <em>me</em>",
-    "about.big": "I'm a student from Oulu, Finland, and <em>I love to travel</em> – in the future I want to study and live abroad.",
+    "about.big": "I live in Helsinki and study at Haaga-Helia, and <em>I love to travel</em> – in the future I want to study and live abroad.",
     "about.p1": "I went to a music class at school and played the violin in the school orchestra. My family is my parents, my little sister and our dog.",
     "about.p2": "We have lived in several different countries, which has made me flexible and adaptable – and confident speaking English. In 2019–2020 our family lived in Spain (Las Palmas), where my sister and I went to a local Spanish-speaking school until the pandemic brought us back to Finland.",
     "about.free": "In my free time",
@@ -188,9 +192,9 @@ window.I18N = {
     "hobby.violin": "Violin",
     "hobby.travel": "Travel",
     "fact.home.k": "Home town",
-    "fact.home.v": "Oulu, Finland",
+    "fact.home.v": "Helsinki, Finland",
     "fact.study.k": "Studying at",
-    "fact.study.v": "Raksila Upper Secondary",
+    "fact.study.v": "Haaga-Helia",
     "fact.lived.k": "Lived in",
     "fact.lived.v": "Las Palmas 2019–20",
     "fact.langs.k": "Languages",
@@ -213,8 +217,12 @@ window.I18N = {
 
     "edu.title": "Education <em>&amp;</em> languages",
     "edu.sub": "Hover over a language – or tap it",
+    "edu.uni": "University of applied sciences",
+    "edu.uni.name": "Haaga-Helia University of Applied Sciences",
+    "edu.uni.yr": "Present",
     "edu.upper": "Upper secondary school",
     "edu.upper.name": "Raksila Upper Secondary School",
+    "edu.upper.yr": "Oulu",
     "edu.basic": "Comprehensive school",
     "edu.basic.name": "Rajakylä School, music class",
     "lang.fi": "Finnish",
@@ -254,7 +262,7 @@ window.I18N = {
     "contact.copied": "Email address copied ✓",
     "contact.regards": "Kind regards",
 
-    "foot.place": "Oulu, Finland",
+    "foot.place": "Helsinki, Finland",
     "foot.privacy": "Privacy policy",
     "foot.nocookies": "No cookies, no tracking",
 
@@ -271,7 +279,7 @@ window.I18N = {
         </ul>
       </div>
       <h2>Data controller</h2>
-      <p>Peppi Hietanen, Oulu, Finland<br>Email: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
+      <p>Peppi Hietanen, Helsinki, Finland<br>Email: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
       <h2>What is this site?</h2>
       <p>This is my personal CV website. Its purpose is to present my skills and experience to potential employers.</p>
       <h2>Information about me</h2>
@@ -294,7 +302,7 @@ window.I18N = {
 
   sv: {
     "meta.title": "Peppi Hietanen",
-    "meta.desc": "Peppi Hietanen – gymnasiestuderande från Uleåborg. Arbetserfarenhet, utbildning, förtroendeuppdrag och kontaktuppgifter.",
+    "meta.desc": "Peppi Hietanen – studerande vid Haaga-Helia i Helsingfors. Arbetserfarenhet, utbildning, förtroendeuppdrag och kontaktuppgifter.",
     "skip": "Hoppa till innehållet",
     "nav.about": "Om mig",
     "nav.work": "Erfarenhet",
@@ -305,9 +313,9 @@ window.I18N = {
     "nav.theme": "Byt mellan ljust och mörkt tema",
     "nav.menu": "Meny",
 
-    "hero.eyebrow": "Gymnasiestuderande · Uleåborg",
+    "hero.eyebrow": "Studerande · Haaga-Helia · Helsingfors",
     "hero.hello": "Hej, jag är",
-    "hero.roles": ["gymnasist", "fotbollsdomare", "lagkapten", "violinist", "världsresenär"],
+    "hero.roles": ["studerande", "fotbollsdomare", "lagkapten", "violinist", "världsresenär"],
     "hero.lede": "Modig, pigg och pålitlig – jag kommer lätt överens med alla slags människor.",
     "hero.cta1": "Kontakta mig",
     "hero.cta2": "Se min erfarenhet",
@@ -324,7 +332,7 @@ window.I18N = {
     "traits": ["Modig", "Pigg", "Vänlig", "Hjälpsam", "Social", "Pålitlig", "Lätt att närma sig", "Flexibel"],
 
     "about.title": "Om <em>mig</em>",
-    "about.big": "Jag är gymnasist från Uleåborg och <em>jag älskar att resa</em> – i framtiden vill jag studera och bo utomlands.",
+    "about.big": "Jag bor i Helsingfors och studerar vid Haaga-Helia, och <em>jag älskar att resa</em> – i framtiden vill jag studera och bo utomlands.",
     "about.p1": "Jag gick i musikklass och spelade fiol i skolorkestern. Min familj består av mina föräldrar, min lillasyster och vår hund.",
     "about.p2": "Vi har bott i flera olika länder, vilket har gjort mig flexibel och anpassningsbar – och jag vågar tala engelska. Åren 2019–2020 bodde vår familj i Spanien (Las Palmas), där jag och min syster gick i en lokal spanskspråkig skola tills coronapandemin tvingade oss att flytta tillbaka till Finland.",
     "about.free": "På fritiden",
@@ -334,9 +342,9 @@ window.I18N = {
     "hobby.violin": "Fiol",
     "hobby.travel": "Resor",
     "fact.home.k": "Hemort",
-    "fact.home.v": "Uleåborg",
+    "fact.home.v": "Helsingfors",
     "fact.study.k": "Studerar vid",
-    "fact.study.v": "Raksila gymnasium",
+    "fact.study.v": "Haaga-Helia",
     "fact.lived.k": "Har bott i",
     "fact.lived.v": "Las Palmas 2019–20",
     "fact.langs.k": "Språk",
@@ -359,8 +367,12 @@ window.I18N = {
 
     "edu.title": "Utbildning <em>&amp;</em> språk",
     "edu.sub": "För muspekaren över ett språk – eller tryck",
+    "edu.uni": "Yrkeshögskola",
+    "edu.uni.name": "Haaga-Helia yrkeshögskola",
+    "edu.uni.yr": "Pågående",
     "edu.upper": "Gymnasium",
     "edu.upper.name": "Raksila gymnasium",
+    "edu.upper.yr": "Uleåborg",
     "edu.basic": "Grundskola",
     "edu.basic.name": "Rajakylä skola, musikklass",
     "lang.fi": "Finska",
@@ -400,7 +412,7 @@ window.I18N = {
     "contact.copied": "E-postadressen kopierad ✓",
     "contact.regards": "Vänliga hälsningar",
 
-    "foot.place": "Uleåborg, Finland",
+    "foot.place": "Helsingfors, Finland",
     "foot.privacy": "Integritetspolicy",
     "foot.nocookies": "Inga kakor, ingen spårning",
 
@@ -417,7 +429,7 @@ window.I18N = {
         </ul>
       </div>
       <h2>Personuppgiftsansvarig</h2>
-      <p>Peppi Hietanen, Uleåborg, Finland<br>E-post: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
+      <p>Peppi Hietanen, Helsingfors, Finland<br>E-post: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
       <h2>Vad är den här webbplatsen?</h2>
       <p>Det här är min personliga CV-webbplats. Syftet är att presentera mina färdigheter och min erfarenhet för möjliga arbetsgivare.</p>
       <h2>Uppgifter om mig</h2>
