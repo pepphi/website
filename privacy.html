@@ -10,10 +10,16 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/styles.css">
-  <script>try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <script>
+    document.documentElement.classList.add('js');
+    window.__introFailsafe = setTimeout(function () { document.documentElement.classList.add('loaded'); }, 8000);
+    try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="skip">Siirry sisältöön</a>
+  <div class="curtain" aria-hidden="true"><img src="assets/logo@2x.png" alt="" width="84" height="84"></div>
+  <div class="cursor" aria-hidden="true"><div class="cursor-ring"><span class="label"></span></div><div class="cursor-dot"></div></div>
   <div class="progress" aria-hidden="true"></div>
 
   <nav class="nav" aria-label="Peppi Hietanen">
@@ -40,7 +46,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
         <span data-i18n="privacy.back">Takaisin etusivulle</span>
       </a>
-      <h1 class="serif" data-i18n-html="privacy.h1">Tietosuoja&shy;<em>seloste</em></h1>
+      <h1 data-i18n-html="privacy.h1">Tietosuoja&shy;<em>seloste</em></h1>
       <p class="updated" data-i18n="privacy.updated">Päivitetty 7.10.2026</p>
       <div data-i18n-html="privacy.body">
         <p>Sivusto ei käytä evästeitä, analytiikkaa eikä seurantaa. Ota yhteyttä: <a href="mailto:peppi.hietanen@icloud.com">peppi.hietanen@icloud.com</a></p>
@@ -52,6 +58,9 @@
     <div class="wrap">© <span id="year">2026</span> Peppi Hietanen</div>
   </footer>
 
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
   <script src="assets/i18n.js"></script>
   <script src="assets/site.js"></script>
 </body>
