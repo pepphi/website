@@ -13,6 +13,24 @@ Sivusto ei tee yhtään pyyntöä ulkopuolisille palvelimille. Animaatiot kytkey
 
 Kieli valitaan automaattisesti selaimen kielen mukaan, ja sen voi vaihtaa ylävalikosta tai linkillä `?lang=fi|en|sv`.
 
+## Muokkaaminen Visual Studio Codessa
+
+1. Avaa koko kansio: *File → Open Folder…* ja valitse sivuston kansio (ei pelkkää yksittäistä tiedostoa).
+2. Asenna ehdotettu laajennus **Live Server** (VS Code ehdottaa sitä automaattisesti).
+3. Avaa `index.html` ja klikkaa alareunan **Go Live** -painiketta. Sivu aukeaa selaimeen ja päivittyy aina, kun tallennat.
+
+Fontit eivät lataudu, jos `index.html` avataan suoraan tiedostona (`file://`), joten käytä Live Serveriä.
+
+Mistä mitäkin löytyy:
+
+| Haluan muuttaa… | Tiedosto |
+| --- | --- |
+| Tekstejä (kaikki kielet) | `assets/i18n.js` |
+| Sivun rakennetta, osioita, kuvia | `index.html` |
+| Värejä, fontteja, kokoja, asettelua | `assets/styles.css` (värit ovat heti alussa `:root`-kohdassa) |
+| Animaatioita ja toimintoja | `assets/site.js` |
+| Tietosuojaselostetta | `assets/i18n.js` (kohta `privacy.body`) |
+
 Julkaisu GitHub Pagesilla: *Settings → Pages → Deploy from a branch* → valitse haara ja `/ (root)`.
 
 Lisenssit: GSAP – [GreenSock Standard License](https://gsap.com/standard-license) (maksuton), Lenis – MIT (`assets/vendor/LICENSE-lenis.txt`), fontit – SIL Open Font License.
