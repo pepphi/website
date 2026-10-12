@@ -277,6 +277,7 @@
       prev.classList.replace('cur', 'prev');
       next.classList.add('cur');
       if (now) now.textContent = String(idx + 1).padStart(2, '0');
+      document.dispatchEvent(new CustomEvent('photochange', { detail: { index: idx, dir } }));
       const done = () => { prev.classList.remove('prev'); prev.hidden = true; busy = false; };
       if (motion) {
         gsap.fromTo(next, { clipPath: dir > 0 ? 'inset(100% 0% 0% 0%)' : 'inset(0% 0% 100% 0%)', scale: 1.25 },
@@ -476,6 +477,7 @@
         oy = parseFloat(note.style.getPropertyValue('--dy')) || 0;
         note.style.zIndex = ++z;
         note.classList.add('dragging');
+        document.dispatchEvent(new CustomEvent('notepick'));
       });
       note.addEventListener('pointermove', e => {
         if (!dragging) return;
@@ -550,6 +552,30 @@
     }
     showToast(t('contact.copied'));
   }));
+
+  /* =========================================================
+     Text scramble (nav links on hover, section labels on reveal)
+     ========================================================= */
+  const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ#*+/';
+  const scramble = el => {
+    if (!motion || el._scrambling) return;
+    el._scrambling = true;
+    const target = el.textContent;
+    const duration = 450, start = performance.now();
+    const tick = now => {
+      const progress = Math.min(1, (now - start) / duration);
+      const shown = Math.floor(progress * target.length);
+      el.textContent = [...target].map((ch, i) => (i < shown || ch === ' ' ? ch : GLYPHS[(Math.random() * GLYPHS.length) | 0])).join('');
+      if (progress < 1) requestAnimationFrame(tick);
+      else {
+        el.textContent = el.dataset.i18n ? t(el.dataset.i18n) : target;
+        el._scrambling = false;
+      }
+    };
+    tick(start);
+  };
+  if (finePointer) $$('.nav-links a, .menu-foot a').forEach(a => a.addEventListener('mouseenter', () => scramble(a)));
+  if (motion) $$('.label span[data-i18n]').forEach(el => ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => scramble(el) }));
 
   /* =========================================================
      Scroll reveals
@@ -629,6 +655,7 @@
       const href = a.getAttribute('href');
       if (!href || href.startsWith('#')) return;
       e.preventDefault();
+      document.dispatchEvent(new CustomEvent('pagetransition'));
       gsap.fromTo(curtain, { yPercent: 100 }, { yPercent: 0, duration: 0.8, ease: 'expo.inOut', onComplete: () => { location.href = href; } });
     }));
     addEventListener('pageshow', e => { if (e.persisted) gsap.set(curtain, { yPercent: -100 }); });

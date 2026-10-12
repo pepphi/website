@@ -137,7 +137,7 @@ window.I18N = {
       <h2>Sivuston kävijöiden tiedot</h2>
       <p>En kerää sivuston kävijöistä henkilötietoja. Sivustolla ei ole evästeitä, analytiikka- tai seurantatyökaluja, mainoksia, upotettua sisältöä eikä lomakkeita. Fontit ja kuvat ladataan suoraan tältä sivustolta, joten selaimesi ei ota yhteyttä kolmansien osapuolten palvelimiin (esim. Google Fonts).</p>
       <h2>Selaimen paikallinen tallennustila</h2>
-      <p>Kun valitset kielen tai vaalean/tumman teeman, valinta tallennetaan selaimesi paikalliseen tallennustilaan (<code>localStorage</code>), jotta se säilyy seuraavalla käynnillä. Tieto pysyy vain laitteellasi eikä sitä lähetetä minnekään. Voit poistaa sen tyhjentämällä selaimen sivustotiedot.</p>
+      <p>Kun valitset kielen tai vaalean/tumman teeman, valinta tallennetaan selaimesi paikalliseen tallennustilaan (<code>localStorage</code>), jotta se säilyy seuraavalla käynnillä. Lisäksi selaimen istuntokohtaiseen tallennustilaan (<code>sessionStorage</code>) tallennetaan, onko avausanimaatio jo näytetty ja onko ääni päällä – nämä tiedot poistuvat, kun suljet välilehden. Tiedot pysyvät vain laitteellasi eikä niitä lähetetä minnekään. Voit poistaa ne tyhjentämällä selaimen sivustotiedot. Sivuston äänet luodaan suoraan selaimessasi, eikä sivusto käytä mikrofonia.</p>
       <h2>Sivuston ylläpito</h2>
       <p>Sivusto on julkaistu GitHub Pages -palvelussa (GitHub, Inc.). Palveluntarjoaja voi tallentaa teknisiä lokitietoja, kuten IP-osoitteita, palvelun turvallisuuden ja toiminnan varmistamiseksi. Näitä tietoja käsittelee GitHub, eivätkä ne ole minun käytettävissäni. Lue lisää: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHubin tietosuojaseloste</a>.</p>
       <h2>Ulkoiset linkit</h2>
@@ -287,7 +287,7 @@ window.I18N = {
       <h2>Information about visitors</h2>
       <p>I do not collect personal data about visitors. The site has no cookies, analytics or tracking tools, ads, embedded content or forms. Fonts and images are served from this site itself, so your browser does not contact third-party servers (such as Google Fonts).</p>
       <h2>Local browser storage</h2>
-      <p>When you choose a language or the light/dark theme, your choice is saved in your browser's local storage (<code>localStorage</code>) so it is remembered on your next visit. It stays on your device and is never sent anywhere. You can remove it by clearing your browser's site data.</p>
+      <p>When you choose a language or the light/dark theme, your choice is saved in your browser's local storage (<code>localStorage</code>) so it is remembered on your next visit. In addition, the browser's session storage (<code>sessionStorage</code>) remembers whether the intro animation has already been shown and whether sound is on – this is removed when you close the tab. The data stays on your device and is never sent anywhere. You can remove it by clearing your browser's site data. The site's sounds are generated in your browser, and the site never uses your microphone.</p>
       <h2>Hosting</h2>
       <p>The site is hosted on GitHub Pages (GitHub, Inc.). The host may record technical log data, such as IP addresses, to keep the service secure and running. This data is processed by GitHub and is not available to me. Read more in <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a>.</p>
       <h2>External links</h2>
@@ -437,7 +437,7 @@ window.I18N = {
       <h2>Uppgifter om besökare</h2>
       <p>Jag samlar inte in personuppgifter om besökare. Webbplatsen har inga kakor, analys- eller spårningsverktyg, annonser, inbäddat innehåll eller formulär. Typsnitt och bilder hämtas direkt från den här webbplatsen, så din webbläsare kontaktar inte tredjepartsservrar (till exempel Google Fonts).</p>
       <h2>Lokal lagring i webbläsaren</h2>
-      <p>När du väljer språk eller ljust/mörkt tema sparas ditt val i webbläsarens lokala lagring (<code>localStorage</code>) så att det finns kvar vid nästa besök. Uppgiften stannar på din enhet och skickas aldrig någonstans. Du kan ta bort den genom att rensa webbläsarens webbplatsdata.</p>
+      <p>När du väljer språk eller ljust/mörkt tema sparas ditt val i webbläsarens lokala lagring (<code>localStorage</code>) så att det finns kvar vid nästa besök. Dessutom sparas i webbläsarens sessionslagring (<code>sessionStorage</code>) om introanimationen redan har visats och om ljudet är på – detta raderas när du stänger fliken. Uppgifterna stannar på din enhet och skickas aldrig någonstans. Du kan ta bort dem genom att rensa webbläsarens webbplatsdata. Webbplatsens ljud skapas direkt i din webbläsare, och webbplatsen använder aldrig din mikrofon.</p>
       <h2>Webbhotell</h2>
       <p>Webbplatsen publiceras via GitHub Pages (GitHub, Inc.). Leverantören kan spara tekniska loggar, till exempel IP-adresser, för att hålla tjänsten säker och i drift. Dessa uppgifter behandlas av GitHub och är inte tillgängliga för mig. Läs mer i <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHubs integritetspolicy</a>.</p>
       <h2>Externa länkar</h2>
@@ -542,3 +542,7 @@ Object.assign(window.I18N.sv, {
   "cur.copy": "Kopiera",
   "cur.call": "Ring"
 });
+
+Object.assign(window.I18N.fi, { "cur.spin": "Pyöritä", "sound.label": "Ääni päälle / pois" });
+Object.assign(window.I18N.en, { "cur.spin": "Spin", "sound.label": "Sound on / off" });
+Object.assign(window.I18N.sv, { "cur.spin": "Snurra", "sound.label": "Ljud på / av" });

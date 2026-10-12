@@ -6,7 +6,9 @@ Staattinen, interaktiivinen CV-sivusto suomeksi, englanniksi ja ruotsiksi. Ei bu
 - `privacy.html` – tietosuojaseloste
 - `assets/i18n.js` – kaikki tekstit kolmella kielellä (muokkaa tekstejä täällä)
 - `assets/styles.css`, `assets/site.js` – ulkoasu ja vuorovaikutus
-- `assets/vendor/` – GSAP (ScrollTrigger, SplitText) ja Lenis, tallennettu paikallisesti
+- `assets/webgl.js` – WebGL-efektit (Three.js): etusivun kuvan nesteefekti ja kultainen 3D-mitali
+- `assets/sound.js` – taustaääni ja käyttöliittymän äänet (Web Audio, oletuksena pois päältä)
+- `assets/vendor/` – GSAP (ScrollTrigger, SplitText), Lenis ja Three.js, tallennettu paikallisesti
 - `assets/fonts/` – fontit ladataan omalta palvelimelta (ei Google Fonts -yhteyttä)
 
 Sivusto ei tee yhtään pyyntöä ulkopuolisille palvelimille. Animaatiot kytkeytyvät pois, jos käyttäjä on valinnut käyttöjärjestelmästä "vähennä liikettä".
@@ -29,8 +31,12 @@ Mistä mitäkin löytyy:
 | Sivun rakennetta, osioita, kuvia | `index.html` |
 | Värejä, fontteja, kokoja, asettelua | `assets/styles.css` (värit ovat heti alussa `:root`-kohdassa) |
 | Animaatioita ja toimintoja | `assets/site.js` |
+| WebGL-efektejä, 3D-mitalia | `assets/webgl.js` |
+| Ääniä | `assets/sound.js` |
 | Tietosuojaselostetta | `assets/i18n.js` (kohta `privacy.body`) |
 
 Julkaisu GitHub Pagesilla: *Settings → Pages → Deploy from a branch* → valitse haara ja `/ (root)`.
 
-Lisenssit: GSAP – [GreenSock Standard License](https://gsap.com/standard-license) (maksuton), Lenis – MIT (`assets/vendor/LICENSE-lenis.txt`), fontit – SIL Open Font License.
+Julkaisu Vercelissä: kirjaudu [vercel.com](https://vercel.com)iin GitHub-tunnuksella → *Add New → Project* → valitse tämä repositorio → Framework Preset: **Other** → *Deploy*. Asetuksia ei tarvita. Jos käytät Verceliä, päivitä tietosuojaselosteen kohta "Sivuston ylläpito" (`assets/i18n.js`).
+
+Lisenssit: GSAP – [GreenSock Standard License](https://gsap.com/standard-license) (maksuton), Lenis – MIT (`assets/vendor/LICENSE-lenis.txt`), Three.js – MIT (`assets/vendor/LICENSE-three.txt`), fontit – SIL Open Font License.
